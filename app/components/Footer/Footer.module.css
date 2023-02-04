@@ -1,0 +1,31 @@
+.footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+}
+
+.logo span {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.footerRight {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    gap: 2rem;
+}
