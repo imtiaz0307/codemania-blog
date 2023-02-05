@@ -32,6 +32,6 @@ License
 Codemania is licensed under the MIT license.
 Contact
 
-If you have any questions or suggestions, feel free to reach out to us at [YOUR_EMAIL].
+If you have any questions or suggestions, feel free to reach out to us at imtiaz0307@gmail.com.
 
 Join the Codemania community today and be a part of the future of coding!
