@@ -11,3 +11,7 @@
 html {
   scrollbar-width: none;
 }
+
+body {
+  min-height: 100vh;
+}

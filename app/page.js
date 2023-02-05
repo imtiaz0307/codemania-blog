@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Home.module.css'
 import { blogs } from '@/data/blogsData'
+import BlogCard from './components/BlogCard/BlogCard'
 
 export default function Home() {
   return (
@@ -26,18 +27,9 @@ export default function Home() {
         <h2>Recent Blogs</h2>
         <div className={styles.blogs}>
           {
-            blogs.map(((blog, index) => {
-              return (
-                <div key={index} className={styles.blog}>
-                  <div className={styles.blogImg}>
-                    <Image width={1000} height={1000} src={blog.img} alt={blog.title} />
-                  </div>
-                  <h2>{blog.title.slice(0, 100)}</h2>
-                  <p>{blog.description.slice(0, 230)}... <Link href={`/blogs/${blog.title}`}>read more</Link></p>
-                  <Link href={`/blogs/${blog.title}`} className={styles.btn}>Continue Reading</Link>
-                </div>
-              )
-            }))
+            blogs.map((blog, index) => {
+              return <BlogCard key={index} blog={blog} />
+            })
           }
         </div>
         <Link href={'/blogs'} className={styles.exploreBtn}>Explore More</Link>
