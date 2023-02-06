@@ -1,0 +1,26 @@
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.blog img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.blog h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.blog p {
+    font-size: .9rem;
+    font-weight: 300;
+}

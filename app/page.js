@@ -27,7 +27,7 @@ export default function Home() {
         <h2>Recent Blogs</h2>
         <div className={styles.blogs}>
           {
-            blogs.map((blog, index) => {
+            blogs.slice(0, 6).map((blog, index) => {
               return <BlogCard key={index} blog={blog} />
             })
           }
