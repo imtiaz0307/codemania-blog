@@ -1,27 +1,22 @@
-'use client'
-
-import { blogs } from '@/data/blogsData'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import styles from './Blog.module.css'
+import fs from 'fs'
 
 const BlogPage = ({ params }) => {
-    const { slug } = params
-    const [blog, setBlog] = useState('')
+    const blog = JSON.parse(fs.readFileSync(`blogs/${params.slug}.json`, 'utf-8'))
 
-    useEffect(() => {
-        console.log(slug)
-        setBlog(...blogs.filter(curBlog => curBlog.slug == slug))
-    }, [])
+    const htmlToText = () => {
+        return { __html: blog.description }
+    }
     return (
         <div className={styles.blog}>
             {
                 blog
                 &&
                 <>
-                    <Image src={blog.img} alt={blog.title} width={1000} height={1000} />
+                    <Image src={blog.banner} alt={blog.title} width={1000} height={1000} />
                     <h1>{blog.title}</h1>
-                    <p>{blog.description}</p>
+                    <div className={styles.description} dangerouslySetInnerHTML={htmlToText()}></div>
                 </>
             }
         </div>

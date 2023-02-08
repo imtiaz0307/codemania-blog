@@ -5,31 +5,3 @@
     gap: 1rem;
     padding: 4rem 0;
 }
-
-.filters {
-    display: flex;
-    padding: 3rem 1rem 1rem;
-    align-items: center;
-    max-width: 1200px;
-    overflow-x: scroll;
-    /* scrollbar-width: none; */
-    margin: auto;
-}
-
-.filters .btn {
-    font-size: .9rem;
-    color: #dd2020;
-    padding: 1rem 1.5rem;
-    border-radius: 100px;
-    background-color: transparent;
-    cursor: pointer;
-    outline: none;
-    border: 2px solid #dd2020;
-    margin: 0 1rem;
-    white-space: nowrap;
-}
-
-.filters .active {
-    background-color: #dd2020;
-    color: white;
-}

@@ -9,7 +9,4 @@ export const filters = [
     'NODE JS',
     'EXPRESS',
     'MONGO DB',
-    // 'MERN STACK',
-    // 'JWT',
-    // 'BCRYPT JS',
 ]
