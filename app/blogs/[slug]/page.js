@@ -2,8 +2,12 @@ import Image from 'next/image'
 import styles from './Blog.module.css'
 import fs from 'fs'
 
+const getBlogPost = (postSlug) => {
+    return JSON.parse(fs.readFileSync(`../../blogposts/${encodeURIComponent(postSlug)}.json`, 'utf-8'))
+}
+
 const BlogPage = ({ params }) => {
-    const blog = JSON.parse(fs.readFileSync(`blogs/${params.slug}.json`, 'utf-8'))
+    const blog = getBlogPost(params.slug)
 
     const htmlToText = () => {
         return { __html: blog.description }

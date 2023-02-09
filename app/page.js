@@ -4,9 +4,13 @@ import styles from './Home.module.css'
 import fs from 'fs'
 import BlogCard from './components/BlogCard/BlogCard'
 
+const getBlogPosts = () => {
+  const blogTitlesArray = fs.readdirSync('blogposts')
+  return blogTitlesArray.map(blog => JSON.parse(fs.readFileSync(`blogposts/${blog}`, 'utf-8')))
+}
+
 export default function Home() {
-  const blogTitlesArray = fs.readdirSync('blogs')
-  const blogs = blogTitlesArray.map(blog => JSON.parse(fs.readFileSync(`blogs/${blog}`, 'utf-8')))
+  const blogs = getBlogPosts()
 
   return (
     <main>

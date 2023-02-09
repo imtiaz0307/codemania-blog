@@ -4,10 +4,13 @@ import styles from './Blogs.module.css'
 
 // uncomment below import to import filters
 // import Filter from "../components/Filter/Filter";
+const getBlogPosts = () => {
+    const blogTitlesArray = fs.readdirSync('blogposts')
+    return blogTitlesArray.map(blog => JSON.parse(fs.readFileSync(`blogposts/${blog}`, 'utf-8')))
+}
 
 const BlogsPage = () => {
-    const blogTitlesArray = fs.readdirSync('blogs')
-    let blogs = blogTitlesArray.map(blog => JSON.parse(fs.readFileSync(`blogs/${blog}`, 'utf-8')))
+    const blogs = getBlogPosts()
 
     return (
         <div className={styles.blogsPage}>
