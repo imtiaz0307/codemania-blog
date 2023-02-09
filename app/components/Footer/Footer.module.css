@@ -29,3 +29,10 @@
     font-size: 1.5rem;
     gap: 2rem;
 }
+
+@media screen and (max-width: 620px) {
+    .footer {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+}

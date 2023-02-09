@@ -79,3 +79,13 @@
 .searchForm button {
     all: unset;
 }
+
+@media screen and (max-width: 620px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        height: max-content;
+        padding: 1rem .5rem;
+        gap: 2rem;
+    }
+}
