@@ -1,22 +1,17 @@
-import BlogCard from "../components/BlogCard/BlogCard";
-import fs from 'fs'
-import styles from './Blogs.module.css'
+"use client"
 
-// uncomment below import to import filters
-// import Filter from "../components/Filter/Filter";
-const getBlogPosts = () => {
-    const blogTitlesArray = fs.readdirSync('blogposts')
-    return blogTitlesArray.map(blog => JSON.parse(fs.readFileSync(`blogposts/${blog}`, 'utf-8')))
-}
+import BlogCard from "../components/BlogCard/BlogCard";
+import styles from './Blogs.module.css'
+import { blogPosts } from "@/data/blogPosts";
+import Filter from "../components/Filter/Filter";
+import { useState } from "react";
 
 const BlogsPage = () => {
-    const blogs = getBlogPosts()
-
+    const [blogs, setBlogs] = useState(blogPosts)
     return (
         <div className={styles.blogsPage}>
 
-            {/* you can enable filters, but i am disabling it for now */}
-            {/* <Filter blogs={blogs} /> */}
+            <Filter blogs={blogPosts} setBlogs={setBlogs} />
 
             <div className={styles.blogs}>
                 {

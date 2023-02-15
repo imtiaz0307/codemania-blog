@@ -4,17 +4,16 @@ import { filters } from "@/data/blogFilters";
 import { useState } from "react";
 import styles from './Filter.module.css'
 
-const Filter = ({ blogs }) => {
+const Filter = ({ blogs, setBlogs }) => {
     const [tabName, setTabName] = useState('ALL')
+
 
     const filterHandler = (e, filterName) => {
         e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         setTabName(filterName)
-        blogs = blogs.filter(blog => blog.title.toLowerCase().includes(filterName.toLowerCase()) || blog.description.toLowerCase().includes(filterName.toLowerCase()))
+        setBlogs(blogs.filter(blog => blog.title.toLowerCase().includes(filterName.toLowerCase()) || blog.description.toLowerCase().includes(filterName.toLowerCase())))
 
-        blogs = filteredBlogs
-
-        if (filterName === 'ALL') return setBlogsToShow(blogs);
+        if (filterName === 'ALL') return setBlogs(blogs);
     }
 
     return (

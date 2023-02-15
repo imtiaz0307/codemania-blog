@@ -4,7 +4,7 @@
     align-items: center;
     max-width: 1200px;
     overflow-x: scroll;
-    /* scrollbar-width: none; */
+    scrollbar-width: none;
     margin: auto;
 }
 

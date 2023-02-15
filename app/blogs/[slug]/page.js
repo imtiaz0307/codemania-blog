@@ -1,17 +1,18 @@
-import Image from 'next/image'
-import styles from './Blog.module.css'
-import fs from 'fs'
+"use client"
 
-const getBlogPost = (postSlug) => {
-    return JSON.parse(fs.readFileSync(`../../blogposts/${encodeURIComponent(postSlug)}.json`, 'utf-8'))
-}
+import { blogPosts } from '@/data/blogPosts'
+import Image from 'next/image'
+import { useEffect, useRef } from 'react'
+import styles from './Blog.module.css'
 
 const BlogPage = ({ params }) => {
-    const blog = getBlogPost(params.slug)
+    const postDescription = useRef()
+    const blog = blogPosts.filter(blogPost => blogPost.slug === params.slug)[0]
 
-    const htmlToText = () => {
-        return { __html: blog.description }
-    }
+
+    useEffect(() => {
+        postDescription.current.innerHTML = blog.description
+    }, [])
     return (
         <div className={styles.blog}>
             {
@@ -20,7 +21,7 @@ const BlogPage = ({ params }) => {
                 <>
                     <Image src={blog.banner} alt={blog.title} width={1000} height={1000} />
                     <h1>{blog.title}</h1>
-                    <div className={styles.description} dangerouslySetInnerHTML={htmlToText()}></div>
+                    <div className={styles.description} ref={postDescription}></div>
                 </>
             }
         </div>

@@ -1,16 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Home.module.css'
-import fs from 'fs'
 import BlogCard from './components/BlogCard/BlogCard'
+import { blogPosts } from '@/data/blogPosts'
 
-const getBlogPosts = () => {
-  const blogTitlesArray = fs.readdirSync('blogposts')
-  return blogTitlesArray.map(blog => JSON.parse(fs.readFileSync(`blogposts/${blog}`, 'utf-8')))
-}
 
 export default function Home() {
-  const blogs = getBlogPosts()
 
   return (
     <main>
@@ -34,7 +29,7 @@ export default function Home() {
         <h2>Recent Blogs</h2>
         <div className={styles.blogs}>
           {
-            blogs.map((blog, index) => {
+            blogPosts.map((blog, index) => {
               return <BlogCard key={index} blog={blog} />
             })
           }
