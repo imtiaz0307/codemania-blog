@@ -6,9 +6,9 @@ export default function Head({ params }) {
 
     return (
         <>
-            <title>{`Codemania | ${blog.title}`}</title>
+            <title>{`Codemania | ${blog?.title}`}</title>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
-            <meta name="description" content={blog.metadesc} />
+            <meta name="description" content={blog?.metadesc} />
             <link rel="icon" href="/favicon.png" />
         </>
     )
