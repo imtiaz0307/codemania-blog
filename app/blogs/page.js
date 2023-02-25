@@ -15,13 +15,13 @@ const BlogsPage = () => {
     const [blogs, setBlogs] = useState(blogPosts)
 
     const filtered = blogs.filter(blog => {
-        return blog.title.toLowerCase().includes(searchQuery)
+        return blog.title.toLowerCase().includes(searchQuery.toLowerCase())
             ||
-            blog.description.toLowerCase().includes(searchQuery)
+            blog.description.toLowerCase().includes(searchQuery.toLowerCase())
             ||
-            blog.slug.toLowerCase().includes(searchQuery)
+            blog.slug.toLowerCase().includes(searchQuery.toLowerCase())
             ||
-            blog.metadesc.toLowerCase().includes(searchQuery)
+            blog.metadesc.toLowerCase().includes(searchQuery.toLowerCase())
     })
 
     return (
