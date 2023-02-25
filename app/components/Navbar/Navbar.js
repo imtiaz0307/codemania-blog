@@ -10,7 +10,6 @@ import { HiXMark } from 'react-icons/hi2'
 
 
 const Navbar = () => {
-    // const router = useRouter()
     const [showSearchForm, setShowSearchForm] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
     const searchQueryRef = useRef()

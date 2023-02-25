@@ -33,9 +33,13 @@ const BlogsPage = () => {
                 {
                     searchQuery
                         ?
-                        filtered.map((blog, index) => {
-                            return <BlogCard key={index} blog={blog} />
-                        })
+                        filtered.length > 0
+                            ?
+                            filtered.map((blog, index) => {
+                                return <BlogCard key={index} blog={blog} />
+                            })
+                            :
+                            'No blogs found.'
                         :
                         blogs.length > 0
                             ?
