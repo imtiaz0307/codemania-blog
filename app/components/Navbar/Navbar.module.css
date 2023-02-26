@@ -73,7 +73,6 @@
     font-size: 1.6rem;
     width: 100%;
     max-width: 500px;
-    min-width: 300px;
 }
 
 .searchForm button {
@@ -87,5 +86,15 @@
         height: max-content;
         padding: 1rem .5rem;
         gap: 2rem;
+    }
+
+    .searchForm {
+        padding: 0 .5rem;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .mainMenu {
+        flex-wrap: wrap;
     }
 }
